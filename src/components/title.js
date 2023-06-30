@@ -1,9 +1,11 @@
 import React from 'react';
-
+import './title.css'
 
 const Title = () => {
   return (
-    <h1>My todo list</h1>
+    <div className='title-block'>
+      <h1 className='title'>Todo List</h1>
+    </div>
   );
 };
 

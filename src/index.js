@@ -1,10 +1,13 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom'; Это в старой версии реак
+import ReactDOM from 'react-dom/client'; /*Это в новой версии */
+
+
 
 import Search from './components/search';
 import Title from './components/title';
 import TodoList from './components/todo-list';
-
+import './index.css'
 
 const App = () => {
 
@@ -25,7 +28,6 @@ const App = () => {
 
 
 
-// ReactDOM.render(<App />, document.getElementById('root'))
-
+// ReactDOM.render(<App />, document.getElementById('root'))  Это в старой версии реакт
 const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App />)
+root.render(<App />) /*Это в новой версии */
