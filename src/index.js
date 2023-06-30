@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 
 import Search from './components/search';
 import Title from './components/title';
@@ -8,19 +8,14 @@ import TodoList from './components/todo-list';
 
 const App = () => {
 
-  // const isLogged = false;
-  // const loginBox = <apan>log in please</apan>
-  // const welcome = <apan>welcom back</apan>;
   const todoData = [
-    { label: 'drink coffee', important: false },
-    { label: 'awesome app', important: true },
-    { label: 'drink cacao', important: false },
+    { label: 'drink coffee', important: false, id: 1 },
+    { label: 'awesome app', important: true, id: 2 },
+    { label: 'drink cacao', important: false, id: 3 },
   ]
-
 
   return (
     <div>
-      {/* <span>{isLogged ? welcome : loginBox}</span> */}
       <Title />
       <Search />
       <TodoList todos={todoData} />
@@ -30,4 +25,7 @@ const App = () => {
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'))
+// ReactDOM.render(<App />, document.getElementById('root'))
+
+const root = ReactDOM.createRoot(document.getElementById('root'))
+root.render(<App />)
