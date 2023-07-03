@@ -1,9 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+// import ReactDOM from 'react-dom/client'; /*Это в новой версии */
 
-import Search from './components/search';
-import Title from './components/title';
-import TodoList from './components/todo-list';
+
+
+import Search from '../search/search';
+import Title from '../title/title';
+import TodoList from '../todo-list/todo-list';
+import ItemStatusFilter from '../item-status-filter/item-status-filter';
+
+import './app.css'
+
 
 
 const App = () => {
@@ -18,14 +24,14 @@ const App = () => {
     <div>
       <Title />
       <Search />
+      <ItemStatusFilter />
       <TodoList todos={todoData} />
     </div>
   );
 };
 
 
+export default App;
 
-// ReactDOM.render(<App />, document.getElementById('root'))
 
-const root = ReactDOM.createRoot(document.getElementById('root'))
-root.render(<App />)
+

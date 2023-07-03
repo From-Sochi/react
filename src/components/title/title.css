@@ -1,0 +1,8 @@
+.title-block {
+align-items: flex-end;
+}
+
+.title {
+flex-grow: 1;
+color: burlywood;
+}
