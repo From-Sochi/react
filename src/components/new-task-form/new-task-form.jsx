@@ -1,12 +1,11 @@
-import React from 'react';
-import './title.css'
+import React from "react";
+import "./new-task-form.css";
 
-const Title = () => {
+
+const NewTaskForm = () => {
   return (
-    <div className='title-block'>
-      <h1 className='title'>Todo List</h1>
-    </div>
+    <input className="new-todo" placeholder="What needs to be done?" autoFocus />
   );
 };
 
-export default Title;
+export default NewTaskForm;

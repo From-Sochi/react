@@ -1,28 +1,21 @@
-import React from 'react';
-import './todo-list-item.css'
+import React from "react";
+import "./tasks-filter.css";
 
-const TodoListItem = ({ label, important = false }) => {
-
-  const Style = {
-    color: important ? 'tomato' : 'black'
-  }
-
+const TasksFilter = () => {
   return (
-    <span className='todo-list-item'>
-      <span className='todo-list-item' style={Style}>
-        {label}
-      </span>;
-
-      <button type='button' className='btn btn-outline-succes btn-sm'>
-        <i className='fa fa-exclamation' />
-      </button>
-
-      <button type='button' className='btn btn-outline-danger btn-sm'>
-        <i className='fa fa-trash-o' />
-      </button>
-
-    </span>
+    <ul className="filters">
+      <li>
+        <button className="selected">All</button>
+      </li>
+      <li>
+        <button>Active</button>
+      </li>
+      <li>
+        <button>Completed</button>
+      </li>
+    </ul>
   );
 };
 
-export default TodoListItem;
+export default TasksFilter;
+

@@ -1,26 +1,16 @@
-import React from 'react';
-import TodoListItem from '../todo-list-item/todo-list-item';
-import './todo-list.css'
+import React from "react";
+import "./footer.css";
+import TasksFilter from "../tasks-filter/tasks-filter";
+// import TasksFilter from "../tasks-filter/tasks-filter";
 
-
-const TodoList = ({ todos }) => {
-
-  const elements = todos.map((item) => {
-
-    const { id, ...itemProps } = item;
-
-    return (
-      <li key={id} className='list-group-item'>
-        <TodoListItem {...itemProps} />
-      </li>
-    );
-  });
-
+const Footer = () => {
   return (
-    <ul className='list-group todo-list'>
-      {elements}
-    </ul>
+    <footer className="footer">
+      <span className="todo-count">1 items left</span>
+      <TasksFilter/>
+      <button className="clear-completed">Clear completed</button>
+    </footer>
   );
 };
 
-export default TodoList;
+export default Footer;

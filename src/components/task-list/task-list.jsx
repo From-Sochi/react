@@ -1,17 +1,18 @@
 import React from "react";
-import './search.css'
+import "./task-list.css";
+import Task from "../task/task";
 
-const Search = () => {
-
-  const searchText = 'placeholder';
-  const searchStyle = { fontSize: '20px' };
+const TaskList = (props) => {
+  const { tasks } = props;
 
   return (
-    <input
-      className="search-input"
-      style={searchStyle}
-      placeholder={searchText} />
+    <ul className="todo-list">
+      {tasks.map((task) => (
+        <Task key={task.id} task={task} />
+      ))}
+    </ul>
   );
 };
 
-export default Search;
+export default TaskList;
+
