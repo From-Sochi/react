@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { nanoid } from 'nanoid';
+import { nanoid } from "nanoid";
 import "./app.css";
 import Tasklist from "../task-list/task-list";
 import Footer from "../footer/footer";
 import NewTaskForm from "../new-task-form/new-task-form";
 
 const App = () => {
+  // Функция генерации id
+  const generateId = () => {
+    return nanoid(6);
+  };
 
-// Функция генерации id
-const generateId = () => {return nanoid(6)}
-
-
-//Передаваемые задачи
+  //Передаваемые задачи
   const [tasks, setTasks] = useState([
     {
       id: generateId(),
@@ -64,24 +64,33 @@ const generateId = () => {return nanoid(6)}
     setTasks((prevTasks) => [...prevTasks, newTask]);
   };
 
+  const [filter, setFilter] = useState("all");
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
   return (
     <section className="todoapp">
       <header className="header">
         <h1>todos</h1>
-        <NewTaskForm
-        createNewTask={createNewTask} />
+        <NewTaskForm createNewTask={createNewTask} />
       </header>
       <section className="main">
         <Tasklist
           tasks={tasks}
           toggleTaskStatus={toggleTaskStatus}
           deleteTask={deleteTask}
+          filter={filter}
         />
       </section>
-      <Footer />
+      <Footer
+        filter={filter}
+        onFilterChange={handleFilterChange}
+        tasksCount={tasks.filter((task) => !task.completed).length}
+      />
     </section>
   );
 };
 
 export default App;
-

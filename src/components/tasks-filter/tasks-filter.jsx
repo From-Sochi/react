@@ -1,21 +1,47 @@
 import React from "react";
 import "./tasks-filter.css";
 
-const TasksFilter = () => {
+const TasksFilter = ({ filter, onFilterChange }) => {
+  const handleAllClick = () => {
+    onFilterChange("all");
+  };
+
+  const handleActiveClick = () => {
+    onFilterChange("active");
+  };
+
+  const handleCompletedClick = () => {
+    onFilterChange("completed");
+  };
+
   return (
     <ul className="filters">
       <li>
-        <button className="selected">All</button>
+        <button
+          className={filter === "all" ? "selected" : ""}
+          onClick={handleAllClick}
+        >
+          All
+        </button>
       </li>
       <li>
-        <button>Active</button>
+        <button
+          className={filter === "active" ? "selected" : ""}
+          onClick={handleActiveClick}
+        >
+          Active
+        </button>
       </li>
       <li>
-        <button>Completed</button>
+        <button
+          className={filter === "completed" ? "selected" : ""}
+          onClick={handleCompletedClick}
+        >
+          Completed
+        </button>
       </li>
     </ul>
   );
 };
 
 export default TasksFilter;
-
